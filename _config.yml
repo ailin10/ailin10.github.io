@@ -6,12 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: UX Menina
+title: Ailin Hernandez
 email: ailin10@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  UX Menina. User Experience girl exposes frontend experiments and UI dreams.
+  Ailin Hernandez. Frontend Developer. Love HCI, UX & A11y.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "/" # the base hostname & protocol for your site
+url: "https://ailin10.github.io/" # the base hostname & protocol for your site
 twitter_username: ailin10
 github_username:  ailin10
 
