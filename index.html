@@ -1,0 +1,16 @@
+---
+layout: default
+title: UX Menina
+---
+
+<ul class="article-list cf">
+{% for post in site.posts %}
+        <li class="article-list__el">
+            <p>
+                <a class="post-link inline-block pointer" href="{{ post.url | prepend: site.baseurl }}">
+                    {{ post.title }}
+                </a>
+            </p>
+        </li>
+{% endfor %}
+</ul>

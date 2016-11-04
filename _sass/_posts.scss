@@ -1,0 +1,8 @@
+.article-list {
+    list-style-type: disc;
+    padding-left: 16px;
+
+    &__el {
+        padding-bottom: 16px;
+    }
+}
