@@ -1,0 +1,93 @@
+.el {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 1px 1px;
+    background: green;
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation: lluvia#{$i} 1s infinite;
+            animation-delay: 500 + (42ms * $i);
+        }
+    }
+}
+
+@keyframes lluvia1 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+        transform: translate(100px, 150px);
+    }
+}
+
+@keyframes lluvia2 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(50px, 30px);
+      }
+}
+
+@keyframes lluvia3 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(20px, 30px);
+      }
+}
+
+@keyframes lluvia4 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(90px, 130px);
+      }
+}
+
+@keyframes lluvia5 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(40px, 20px);
+      }
+}
+
+@keyframes lluvia6 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(100px, 100px);
+      }
+}
+
+@keyframes lluvia7 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(100px, 100px);
+      }
+}
+
+@keyframes lluvia8 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(100px, 100px);
+      }
+}
+
+@keyframes lluvia9 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(100px, 100px);
+      }
+}
+
+@keyframes lluvia10 {
+    from {
+        transform: translate(0px, 0px);
+    } to {
+          transform: translate(100px, 100px);
+      }
+}

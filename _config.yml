@@ -18,4 +18,5 @@ github_username:  ailin10
 # Build settings
 markdown: kramdown
 sass:
+  sass_dir: ./_scss
   style: compressed
