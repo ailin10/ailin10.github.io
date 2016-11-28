@@ -1,15 +1,65 @@
 ---
-layout: default
-title: rain
+layout: mapita
+title: Mapita
 ---
 
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
-<div class="el"></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.3.1/mapbox-gl-geocoder.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.3.1/mapbox-gl-geocoder.css' type='text/css' />
+
+<input placeholder="Search for a location" id="js-city-query">
+<div  class="mohp">
+    <div class="mohpi">
+        <div id="map" class="w-100 h-100">
+            <div class="city-name" id="js-city-name"></div>
+            <div class="difuse"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYWlsaW4xMCIsImEiOiJjaXR3c3ZxcWkwMDIwM3hxZncya3ZlOXBqIn0.t2tbwI-gFVrHMS4xSifwhg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/ailin10/civ9n6mzw001g2ip2yfhjv8hw',
+        center: [4.9022, 52.3732],
+        zoom: 13
+    });
+
+    var geocoder = new mapboxgl.Geocoder(),
+        inputSearch = document.getElementById('js-city-query');
+
+    map.addControl(geocoder);
+
+    map.on('load', function() {
+        inputSearch.addEventListener('keypress', function(e) {
+            var key = e.which || e.keyCode;
+            if (key === 13) {
+                var inputQuery = inputSearch.value;
+                geocoder.query(inputQuery);
+            }
+        });
+    });
+
+    geocoder.on('result', getResult);
+
+    geocoder.on('results', function(e) {
+        console.log('results: ', e.results);
+    });
+
+    function getResult() {
+        console.log('Fetched', geocoder.getResult());
+        geocoder.off('result', getResult);
+        addName();
+
+    }
+
+    geocoder.on('error', function(e) {
+        console.log('Error is', e.error);
+    });
+
+    function addName() {
+        console.log(geocoder.getResult().text);
+        document.getElementById('js-city-name').text = geocoder.getResult().text;
+    }
+
+</script>
